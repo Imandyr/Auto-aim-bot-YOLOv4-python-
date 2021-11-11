@@ -18,3 +18,5 @@ net = cv.dnn.readNet('CSv3_6000.weights', 'CSv3.cfg')
 поставте везде либо CSv3 либо CSv2. ( CSv2 немного не точный, а CSv3 получился точнее, но он теперь на свои же руки реагирует)
 
 ну и всё получается.
+
+Весы можн оскачать здесь: https://drive.google.com/drive/folders/1wy3BOiJsdn_5pdGw8wWbNrmuKWxlfK3b?usp=sharing
