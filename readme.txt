@@ -19,4 +19,4 @@ net = cv.dnn.readNet('CSv3_6000.weights', 'CSv3.cfg')
 
 ну и всё получается.
 
-Весы можн оскачать здесь: https://drive.google.com/drive/folders/1wy3BOiJsdn_5pdGw8wWbNrmuKWxlfK3b?usp=sharing
+Весы можно скачать здесь: https://drive.google.com/drive/folders/1wy3BOiJsdn_5pdGw8wWbNrmuKWxlfK3b?usp=sharing
