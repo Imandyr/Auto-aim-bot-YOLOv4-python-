@@ -32,17 +32,12 @@ with mss.mss() as sct:
     frame_counter = 0
 
     while True:
-
-        sct_img = sct.grab(monitor)
-
-        mss.tools.to_png(sct_img.rgb, sct_img.size, output=output)
-        print(output)
-
-        cap = cv.imread(output)
+        frame = np.array(sct.grab(monitor))
+        frame = cv.cvtColor(frame, cv.COLOR_RGB2BGR)
+        #frame = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
 
         x1, x2, x3, x4 = 0, 0, 0, 0
 
-        frame = cap
         frame_counter += 1
         classes, scores, boxes = model.detect(frame, Conf_threshold, NMS_threshold)
         for (classid, score, box) in zip(classes, scores, boxes):
@@ -72,9 +67,7 @@ with mss.mss() as sct:
                    cv.FONT_HERSHEY_COMPLEX, 0.7, (0, 255, 0), 2)
         cv.imshow('frame', frame)
 
-        key = cv.waitKey(1)
-        if key == ord('q'):
-            break
+        if cv.waitKey(1) & 0xFF == ord("q"):
+            cv.destroyAllWindows()
+            break  
 
-cap.release()
-cv.destroyAllWindows()
